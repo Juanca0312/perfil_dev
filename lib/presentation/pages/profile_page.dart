@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perfil_dev/core/constants/app_spacing.dart';
 import 'package:perfil_dev/core/extensions/build_context_extensions.dart';
 import 'package:perfil_dev/presentation/pages/experience_page.dart';
 import 'package:perfil_dev/presentation/widgets/bullet_item.dart';
@@ -23,13 +24,13 @@ class ProfilePage extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: Column(
           children: [
             _buildAboutSection(context),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xl),
             _buildSkillsSection(context),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xl),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -50,7 +51,7 @@ class ProfilePage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Sobre mí', style: context.textTheme.headlineSmall),
-        const SizedBox(height: 10),
+        const SizedBox(height: AppSpacing.md),
         Text(
           'Soy Juan Carlos Hernandez, bachiller en Ingeniería de Software con '
           'especial énfasis en desarrollo móvil con gran entusiasmo en seguir '
@@ -66,7 +67,7 @@ class ProfilePage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Habilidades', style: context.textTheme.headlineSmall),
-        const SizedBox(height: 10),
+        const SizedBox(height: AppSpacing.md),
         const BulletItem(text: 'Flutter, Dart'),
         const BulletItem(text: 'Swift, SwiftUI, UIKit'),
         const BulletItem(text: 'Figma'),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perfil_dev/core/constants/app_spacing.dart';
 
 class ExperiencePage extends StatelessWidget {
   const ExperiencePage({super.key});
@@ -8,7 +9,7 @@ class ExperiencePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Experiencia')),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppSpacing.lg),
         child: Column(
           children: const [
             _ExperienceItem(
@@ -59,14 +60,14 @@ class _ExperienceItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 24),
+      padding: const EdgeInsets.only(bottom: AppSpacing.xxl),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(role, style: Theme.of(context).textTheme.titleLarge),
           Text(company, style: Theme.of(context).textTheme.titleMedium),
           Text(period, style: Theme.of(context).textTheme.bodySmall),
-          const SizedBox(height: 8),
+          const SizedBox(height: AppSpacing.sm),
           Text(description),
         ],
       ),

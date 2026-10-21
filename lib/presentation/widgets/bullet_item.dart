@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perfil_dev/core/constants/app_spacing.dart';
 import 'package:perfil_dev/core/extensions/build_context_extensions.dart';
 
 class BulletItem extends StatelessWidget {
@@ -9,7 +10,7 @@ class BulletItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
+      padding: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
       child: Row(
         children: [
           Container(
@@ -20,7 +21,7 @@ class BulletItem extends StatelessWidget {
               color: context.colorScheme.primary,
             ),
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: AppSpacing.sm),
           Text(text, style: context.textTheme.bodyMedium),
         ],
       ),
