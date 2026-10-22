@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perfil_dev/core/constants/app_spacing.dart';
 import 'package:perfil_dev/core/extensions/build_context_extensions.dart';
+import 'package:perfil_dev/data/profile_data.dart';
 import 'package:perfil_dev/presentation/pages/experience_page.dart';
 import 'package:perfil_dev/presentation/widgets/bullet_item.dart';
 
@@ -52,12 +53,9 @@ class ProfilePage extends StatelessWidget {
       children: [
         Text('Sobre mí', style: context.textTheme.headlineSmall),
         const SizedBox(height: AppSpacing.md),
-        Text(
-          'Soy Juan Carlos Hernandez, bachiller en Ingeniería de Software con '
-          'especial énfasis en desarrollo móvil con gran entusiasmo en seguir '
-          'adquiriendo conocimiento día a día.',
-          style: context.textTheme.bodyMedium,
-        ),
+        Text(currentProfile.name, style: context.textTheme.titleMedium),
+        const SizedBox(height: AppSpacing.sm),
+        Text(currentProfile.biography, style: context.textTheme.bodyMedium),
       ],
     );
   }
@@ -68,12 +66,7 @@ class ProfilePage extends StatelessWidget {
       children: [
         Text('Habilidades', style: context.textTheme.headlineSmall),
         const SizedBox(height: AppSpacing.md),
-        const BulletItem(text: 'Flutter, Dart'),
-        const BulletItem(text: 'Swift, SwiftUI, UIKit'),
-        const BulletItem(text: 'Figma'),
-        const BulletItem(text: 'Git, GitHub, Gitflow'),
-        const BulletItem(text: 'UnitTests, WidgetTests'),
-        const BulletItem(text: 'Clean Architecture, MVVM, MVC'),
+        for (final skill in currentProfile.skills) BulletItem(text: skill),
       ],
     );
   }
